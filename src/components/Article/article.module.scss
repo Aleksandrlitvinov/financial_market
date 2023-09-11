@@ -1,0 +1,33 @@
+.articleWrapper {
+  max-width: 350px;
+  width: 100%;
+}
+
+.image {
+  display: inline-block;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.chapter {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+
+.title {
+  margin: 10px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+}
+
+.date {
+  text-align: start;
+  padding-left: 10px;
+}
