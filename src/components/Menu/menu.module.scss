@@ -1,0 +1,17 @@
+.menu__list{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu__listItem{
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu__listLink{
+  text-decoration: none;
+  font-size: 18px;
+}

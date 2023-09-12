@@ -18,7 +18,7 @@ const Article = ({title, chapter, imgUrl, description}) => {
           src={imgUrl}
           alt="photo"
         />
-        <p className={styles.chapter}> {chapter}</p>
+        <p className={styles.chapter}>{chapter}</p>
         <h3
           className={styles.title}
           onClick={() => onClickShowInfo()}

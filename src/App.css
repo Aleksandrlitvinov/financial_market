@@ -15,6 +15,26 @@ body {
   pointer-events: none;
 }
 
+.main {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
