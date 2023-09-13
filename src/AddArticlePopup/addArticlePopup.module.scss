@@ -26,8 +26,14 @@
   animation: show-clearPopup 1s;
 }
 
+.input {
+  padding: 10px;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
 .title {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   font-weight: 700;
   font-size: 22px;
@@ -38,7 +44,7 @@
 }
 
 .buttons {
-  width: 250px;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

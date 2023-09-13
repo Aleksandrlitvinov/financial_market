@@ -11,13 +11,16 @@ import Insurance from "./pages/Insurance";
 import Personal from "./pages/Personal";
 import Etf from "./pages/Etf";
 import React from "react";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, getDocs, addDoc} from "firebase/firestore";
 import {db} from "./firebase/firebaseConfig";
 
 
 function App() {
 
   const [listOfArticles, setListOfArticles] = React.useState([])
+  const addNewArticle = (article) => {
+    listOfArticles.push(article)
+  }
 
   const fetchArticles = async () => {
 
@@ -31,6 +34,23 @@ function App() {
 
   }
 
+
+  const newArticle = {
+    imgUrl: 'CA',
+    title: 'Los Angeles',
+    description: 'USA'
+  };
+
+  const addTodo = async () => {
+
+    try {
+      const docRef = await addDoc(collection(db, "articles"), newArticle | null);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
   React.useEffect(() => {
     fetchArticles()
   }, [])
@@ -40,8 +60,9 @@ function App() {
       <Header/>
       <main className="main">
         <Routes>
-          <Route path={"/"} element={<Home listOfTotalArticles={listOfArticles}/>}/>
-          <Route path={"/markets"} element={<Markets listOfTotalArticles={listOfArticles} />}/>
+          <Route path={"/"}
+                 element={<Home listOfTotalArticles={listOfArticles} addNewArticle={(obj) => addNewArticle(obj)}/>}/>
+          <Route path={"/markets"} element={<Markets listOfTotalArticles={listOfArticles}/>}/>
           <Route path={"/government"} element={<Government listOfTotalArticles={listOfArticles}/>}/>
           <Route path={"/sport"} element={<Sport listOfTotalArticles={listOfArticles}/>}/>
           <Route path={"/company"} element={<Company listOfTotalArticles={listOfArticles}/>}/>

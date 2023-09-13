@@ -2,7 +2,11 @@ import React from 'react';
 import styles from './article.module.scss'
 import InfoPopup from "../InfoPopup";
 
-const Article = ({title, chapter, imgUrl, description}) => {
+const Article = ({articles, id, imgUrl}) => {
+
+  const currentArticle = articles.find(article => article.id === id)
+
+  const {title, description, chapter} = currentArticle
 
   const [visibleDescription, setVisibleDescription] = React.useState(false)
   const onClickShowInfo = () => {
@@ -26,10 +30,12 @@ const Article = ({title, chapter, imgUrl, description}) => {
           {title}
         </h3>
         <InfoPopup
+          currentArticle={currentArticle}
           showDescription={visibleDescription}
           setShowDescription={setVisibleDescription}
           articleTitle={title}
           articleDescription={description}
+          id={id}
         />
       </div>
     </article>
