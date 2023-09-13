@@ -9,7 +9,7 @@ const Menu = () => {
     <ul className={styles.menu__list}>
       {
         chapterList.map(chapter => (
-          <Link to={chapter}>
+          <Link to={chapter} key={chapter}>
             <li className={styles.menu__listItem}>
               <a className={styles.menu__listLink}>{chapter}</a>
             </li>
